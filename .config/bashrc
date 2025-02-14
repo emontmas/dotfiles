@@ -16,7 +16,6 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles_tig='tig -C $HOME/.dotfiles/'
 
 alias r='. ranger'
-alias fd=fdfind
 
 alias gs='git status'
 alias gch='git checkout'
