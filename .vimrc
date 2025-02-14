@@ -33,7 +33,7 @@ hi ColorColumn ctermbg=8
 " ===[ Git commit ]=== {{{
 
 " Git commit configuration
-augroup filetype_gitcommit
+augroup ft_gitcommit
 	autocmd!
 	autocmd FileType gitcommit setlocal textwidth=72
 	autocmd FileType gitcommit setlocal spell
@@ -42,11 +42,18 @@ augroup END
 " }}}
 " ===[ Vimscript ]==={{{
 
-augroup filetype_vim
+augroup ft_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 	autocmd FileType vim setlocal colorcolumn=0
 	autocmd Filetype vim setlocal wrap
 augroup END
 
+" }}}
+" ===[ SSH Config ]=== {{{
+
+augroup ft_sshconfig
+	autocmd!
+	autocmd FileType sshconfig setlocal foldmethod=marker
+augroup END
 " }}}
