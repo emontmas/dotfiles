@@ -1,0 +1,22 @@
+# Bashrc extension for custom configs
+# Should be sourced at the end of .bashrc
+
+# ===[ PATH exports for tools ]===
+
+export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
+
+
+# ===[ Aliases ]===
+
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles_tig='tig -C$HOME/.dotfiles/'
+
+alias r='. ranger'
+alias fd=fdfind
+
+# Generate .pdf files for all .adoc files found recursively from the current directory
+alias asciidoctor-pdf-recursive='for f in $(find . -name "*.adoc"); do asciidoctor-pdf --q $f 2> /dev/null; done'
+
+# USB Serial ports
+alias p0='picocom -b 115200 /dev/ttyUSB0'
+alias p1='picocom -b 115200 /dev/ttyUSB1'
