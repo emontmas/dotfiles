@@ -28,6 +28,15 @@ alias dotfiles_tig='tig -C$HOME/.dotfiles/'
 alias r='. ranger'
 alias fd=fdfind
 
+alias gs='git status'
+alias gch='git checkout'
+alias ga='git add'
+alias gco='git commit'
+alias gcoa='git commit --amend'
+alias gcp='git cherry-pick'
+alias gri='git rebase -i --autosquash'
+alias tiga='tig --all'
+
 # Generate .pdf files for all .adoc files found recursively from the current directory
 alias asciidoctor-pdf-recursive='for f in $(find . -name "*.adoc"); do asciidoctor-pdf --q $f 2> /dev/null; done'
 
