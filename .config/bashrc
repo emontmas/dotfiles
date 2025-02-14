@@ -1,29 +1,19 @@
 # Bashrc extension for custom configs
 # Should be sourced at the end of .bashrc
 
+export EDITOR=vim
+export VISUAL=vim
+
+
 # ===[ PATH exports for tools ]===
 
 export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
 
 
-# ===[ Powerline ]===
-
-# Run powerline daemon
-powerline-daemon -q
-# To locate this directory, run: pip show powerline-status
-# export POWERLINE_LOCATION="$(pip show powerline-status | sed -rn 's|^Location: (.*)$|\1|p')/powerline"
-export POWERLINE_LOCATION="$HOME/.local/lib/python3.10/site-packages/powerline"
-export POWERLINE_CONFIG_COMMAND=powerline-config
-export POWERLINE_BASH_CONTINUATION=1
-export POWERLINE_BASH_SELECT=1
-# Invoke binding script
-. "$POWERLINE_LOCATION/bindings/bash/powerline.sh"
-
-
 # ===[ Aliases ]===
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dotfiles_tig='tig -C$HOME/.dotfiles/'
+alias dotfiles_tig='tig -C $HOME/.dotfiles/'
 
 alias r='. ranger'
 alias fd=fdfind
