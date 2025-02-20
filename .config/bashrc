@@ -1,6 +1,8 @@
 # Bashrc extension for custom configs
 # Should be sourced at the end of .bashrc
 
+eval "$(starship init bash)"
+
 export EDITOR=vim
 export VISUAL=vim
 
