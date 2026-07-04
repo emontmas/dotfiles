@@ -1,0 +1,25 @@
+set -g default-terminal "${TERM}"
+
+# Set new panes/windows to open in current directory
+bind c new-window -c "#{pane_current_path}"
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+
+if-shell "[ -f ~/.ssh/ssh_auth_sock ]" {
+    # Make all panes set the SSH_AUTH_SOCK to a symlink that points to
+    # the socket openned by the ssh forward agent.
+    # This symlink is kept updated by what is executed in ~/.ssh/rc
+    #
+    # Idea comes from https://werat.dev/blog/happy-ssh-agent-forwarding/
+    set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"     
+    set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock
+}
+
+# Plugins
+if-shell "[ -d ~/.tmux/plugins/tpm/tpm ]" {
+    set -g @plugin 'tmux-plugins/tpm'
+    set -g @plugin 'tmux-plugins/tmux-sensible'
+    set -g @plugin 'tmux-plugins/tmux-resurrect'
+    
+    run '~/.tmux/plugins/tpm/tpm'
+}
