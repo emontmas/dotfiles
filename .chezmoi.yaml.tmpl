@@ -1,0 +1,9 @@
+{{ $hookScriptsDir := print .chezmoi.sourceDir "/hooks" }}
+
+git:
+  add: true
+
+hooks:
+  apply:
+    post:
+      script: "{{ $hookScriptsDir }}/apply_post.sh"
