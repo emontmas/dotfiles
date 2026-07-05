@@ -1,0 +1,43 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[directory]
+truncation_length = 5
+truncate_to_repo = false
+
+[status]
+disabled = false
+symbol = '🔴'
+pipestatus = true
+
+[sudo]
+disabled = false
+
+# Language modules
+[c]
+format = '[$symbol]($style)'
+[cmake]
+format = '[$symbol]($style)'
+[python]
+format = '[$symbol(\($virtualenv\) )]($style)'
+[ruby]
+format = '[$symbol]($style)'
+[dotnet]
+format = '[$symbol]($style)'
+[julia]
+format = '[$symbol]($style)'
+[lua]
+format = '[$symbol]($style)'
+[meson]
+format = '[$symbol]($style)'
+[rust]
+format = '[$symbol]($style)'
+
+# Disabled modules
+[line_break]
+disabled = true
+[package]
+disabled = true
