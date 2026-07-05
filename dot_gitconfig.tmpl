@@ -1,0 +1,10 @@
+[user]
+	name = Elinor Montmasson
+{{- if eq .chezmoi.config.data.env_type "Work" }}
+	email = elinor.montmasson@savoirfairelinux.com
+{{- else }}
+	email = elinor.montmasson@gmail.com
+{{- end }}
+
+[init]
+	defaultBranch = main
