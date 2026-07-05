@@ -1,4 +1,6 @@
-{{ $hookScriptsDir := print .chezmoi.sourceDir "/hooks" }}
+{{- $hookScriptsDir := print .chezmoi.sourceDir "/hooks" -}}
+data:
+  env_type: "{{ promptChoiceOnce . "env_type" "Select the environment type" (list "Personal" "Work") }}"
 
 git:
   add: true
