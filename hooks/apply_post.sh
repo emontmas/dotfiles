@@ -25,3 +25,8 @@ if ! [[ -d ~/.tmux/plugins/tpm ]]; then
 		done
 	fi
 fi
+
+if ! grep -q "\. ~/.config/bashrc" ~/.bashrc; then
+	echo "Adding sourcing of ~/.config/bashrc to ~/.bashrc"
+	echo ". ~/.config/bashrc" >> ~/.bashrc
+fi
