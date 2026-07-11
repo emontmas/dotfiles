@@ -23,6 +23,7 @@ if ! [[ -d ~/.tmux/plugins/tpm ]]; then
 					;;
 			esac
 		done
+		echo "Tmux Plugin manager (TPM) installed. Start a tmux session and input prefix+I to install plugins."
 	fi
 fi
 
