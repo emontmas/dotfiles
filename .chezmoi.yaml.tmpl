@@ -1,6 +1,11 @@
 {{- $hookScriptsDir := print .chezmoi.sourceDir "/hooks" -}}
+{{- $env_type := promptChoiceOnce . "env_type" "Select the environment type" (list "Personal" "Work") -}}
+
 data:
-  env_type: "{{ promptChoiceOnce . "env_type" "Select the environment type" (list "Personal" "Work") }}"
+  env_type: "{{ $env_type }}"
+{{- if eq $env_type "Work" }}
+  gerrit_server_url: "{{ promptStringOnce . "gerrit_server_url" "Gerrit repository URL" -}}"
+{{- end }}
 
 git:
   add: true

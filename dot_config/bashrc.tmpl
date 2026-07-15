@@ -32,6 +32,12 @@ alias gcp='git cherry-pick'
 alias gri='git rebase -i --autosquash'
 alias tiga='tig --all'
 
+{{- if eq .chezmoi.config.data.env_type "Work" }}
+alias get-commit-hook='mkdir -p `git rev-parse --git-dir`/hooks/ && \
+    curl -Lo `git rev-parse --git-dir`/hooks/commit-msg {{ .chezmoi.config.data.gerrit_server_url }}/tools/hooks/commit-msg && \
+    chmod +x `git rev-parse --git-dir`/hooks/commit-msg'
+{{- end }}
+
 # Generate .pdf files for all .adoc files found recursively from the current directory
 alias asciidoctor-pdf-recursive='for f in $(find . -name "*.adoc"); do asciidoctor-pdf --q $f 2> /dev/null; done'
 
