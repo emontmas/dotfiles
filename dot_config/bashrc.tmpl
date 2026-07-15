@@ -44,3 +44,11 @@ alias asciidoctor-pdf-recursive='for f in $(find . -name "*.adoc"); do asciidoct
 # USB Serial ports
 alias p0='picocom -b 115200 /dev/ttyUSB0'
 alias p1='picocom -b 115200 /dev/ttyUSB1'
+
+
+# ===[ Helper functions ]===
+
+dtb2dts () {            
+    dt="$(basename -s .dtb $1)"                                                            
+    dtc -I dtb -O dts $dt.dtb -o $dt.dts
+}
