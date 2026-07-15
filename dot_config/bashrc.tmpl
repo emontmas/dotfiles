@@ -29,7 +29,7 @@ alias ga='git add'
 alias gco='git commit'
 alias gcoa='git commit --amend'
 alias gcp='git cherry-pick'
-alias gri='git rebase -i --autosquash'
+alias gri='git rebase -i --autosquash --update-refs'
 alias tiga='tig --all'
 
 {{- if eq .chezmoi.config.data.env_type "Work" }}
