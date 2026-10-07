@@ -18,7 +18,16 @@ export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
 
 # ===[ Aliases ]===
 
-alias r='. ranger'
+if command -v lf >/dev/null 2>&1; then
+    lfcd () {
+        cd "$(command lf -print-last-dir "$@")"
+    }
+
+    alias r=lfcd
+elif command -v ranger >/dev/null 2>&1; then
+    alias r='. ranger'
+fi
+
 {{- if eq .chezmoi.osRelease.id "ubuntu" "debian" }}
 alias fd='fdfind'
 {{ end }}
