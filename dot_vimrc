@@ -17,6 +17,7 @@ set showcmd
 " Indentation
 set shiftwidth=4
 set tabstop=4
+set expandtab
 
 " Visual column at textwidth limit
 set colorcolumn=+1
