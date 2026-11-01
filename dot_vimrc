@@ -1,4 +1,4 @@
-" ===[ General ]==={{{
+" ===[ General/Defaults ]==={{{
 
 " Disable compatibility with vi
 set nocompatible
@@ -18,6 +18,16 @@ set showcmd
 set shiftwidth=4
 set tabstop=4
 set expandtab
+
+" Folding
+
+set foldlevelstart=99
+set foldmethod=syntax
+
+augroup ft_config_fold
+    autocmd!
+    autocmd FileType vim,lf,sshconfig setlocal foldmethod=marker
+augroup END
 
 " Visual column at textwidth limit
 set colorcolumn=+1
@@ -45,16 +55,8 @@ augroup END
 
 augroup ft_vim
     autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
 	autocmd FileType vim setlocal colorcolumn=0
 	autocmd Filetype vim setlocal wrap
 augroup END
 
-" }}}
-" ===[ SSH Config ]=== {{{
-
-augroup ft_sshconfig
-	autocmd!
-	autocmd FileType sshconfig setlocal foldmethod=marker
-augroup END
 " }}}
