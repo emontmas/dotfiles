@@ -89,4 +89,7 @@ map a :push %mkdir<space>
 
 map <delete> delete
 
+map <backspace> set hidden!
+map <backspace2> set hidden!
+
 # }}}
