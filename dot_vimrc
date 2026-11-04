@@ -24,9 +24,14 @@ set expandtab
 set foldlevelstart=99
 set foldmethod=syntax
 
-augroup ft_config_fold
+augroup ft_fold_marker
     autocmd!
     autocmd FileType vim,lf,sshconfig setlocal foldmethod=marker
+augroup END
+
+augroup ft_fold_indent
+    autocmd!
+    autocmd FileType yaml setlocal foldmethod=indent
 augroup END
 
 " Visual column at textwidth limit
